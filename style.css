@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #0e0e10;
+    color: white;
+    margin: 0;
+    padding: 10px;
+}
+
+h1 {
+    margin-bottom: 10px;
+    font-size: clamp(16px, 3vw, 24px);
+}
+
+/* Board container */
+#bingo-board {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+    width: 480px; /* total board width */
+    margin: 0 auto 12px auto; /* center horizontally */
+}
+
+/* Each square */
+.square {
+    background: #18181b;
+    border: 2px solid #2f2f35;
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 4px;
+    text-align: center;
+    line-height: 1.1;
+    word-break: break-word;
+
+    aspect-ratio: 1 / 1; /* ensures perfect square */
+    overflow: hidden;
+
+    font-size: 20px; /* starting font size, JS will shrink if needed */
+    transition: all 0.15s ease;
+}
+
+.square:hover {
+    border-color: #b22222; /* darker red hover */
+    transform: scale(1.03);
+}
+
+.square.marked {
+    background: #b22222;  /* darker red background */
+    border-color: #ff4c4c; /* slightly lighter than background for contrast */
+    transform: scale(0.97);
+}
+
+/* Button */
+#new-card {
+    display: block;
+    margin: 12px auto;
+    background: #b22222; /* darker red */
+    border: none;
+    padding: 8px 16px;
+    color: white;
+    font-size: clamp(12px, 2vw, 16px);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+#new-card:hover {
+    background: #8b1a1a; /* even darker hover red */
+}
